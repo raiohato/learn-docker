@@ -6,4 +6,3 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && rm -rf /var/cache/apk/*
 COPY nailrc.sh /nailrc.sh
 RUN chmod +x /nailrc.sh
-CMD ["/nailrc.sh"]
