@@ -1,6 +1,6 @@
 FROM zabbix/zabbix-server-mysql
-ENV MAIL_SENDER admin@yourdomain.com
-ENV MAIL_MTA 172.17.3.4
+ENV MAIL_SENDER=$MAIL_SENDER
+ENV MAIL_MTA=$MAIL_MTA
 RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && echo "http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
  && apk update \
