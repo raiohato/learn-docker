@@ -4,5 +4,6 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && apk update \
  && apk add heirloom-mailx \
  && rm -rf /var/cache/apk/*
-CMD ["echo "set from=${MAIL_SENDER}" >> /etc/nail.rc \
- && echo "set smtp=${MAIL_MTA}" >> /etc/nail.rc"]
+COPY nailrc.sh /nailrc.sh
+RUN chmod +x /nailrc.sh
+CMD ["/nailrc.sh"]
