@@ -1,6 +1,6 @@
 FROM zabbix/zabbix-server-mysql
-ENV MAIL_SENDER
-ENV MAIL_MTA
+ENV MAIL_SENDER=admin@yourdomain.com
+ENV MAIL_MTA=172.17.3.4
 RUN echo "http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
  && apk update \
  && apk add heirloom-mailx
