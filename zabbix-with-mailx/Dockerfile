@@ -1,5 +1,8 @@
 FROM zabbix/zabbix-server-mysql
-RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
+COPY sendmail.sh /usr/lib/zabbix/alertscripts/
+RUN chmod +x /usr/lib/zabbix/alertscripts/sendmail.sh \
+ && touch /tmp/mailtmp.txt \
+ && echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && echo "http://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
  && echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
  && apk update \
@@ -10,5 +13,3 @@ RUN echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
  && sed -i '7iecho \"set smtp-auth-password=\${MAIL_PASSWD}\" >> /etc/nail.rc' /run_zabbix_component.sh \
  && sed -i '8iecho \"set smtp-auth=login" >> /etc/nail.rc' /run_zabbix_component.sh \
  && rm -rf /var/cache/apk/*
-COPY sendmail.sh /usr/lib/zabbix/alertscripts/
-RUN chmod +x /usr/lib/zabbix/alertscripts/sendmail.sh && touch /tmp/mailtmp.txt
