@@ -11,4 +11,5 @@ RUN touch /tmp/mailtmp.txt \
  && sed -i '6iecho "set smtp-auth-user=${MAIL_SENDER}" >> /etc/nail.rc' /run_zabbix_component.sh \
  && sed -i '7iecho "set smtp-auth-password=${MAIL_PASSWD}" >> /etc/nail.rc' /run_zabbix_component.sh \
  && sed -i '8iecho "set smtp-auth=login" >> /etc/nail.rc' /run_zabbix_component.sh \
- && sed -i '9iecho "chmod +x /usr/lib/zabbix/alertscripts/sendmail.sh' /run_zabbix_component.sh
+ && sed -i '9ichmod +x /usr/lib/zabbix/alertscripts/sendmail.sh' /run_zabbix_component.sh \
+ rm -rf /var/cache/apk/*
