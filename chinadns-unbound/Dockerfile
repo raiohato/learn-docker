@@ -1,6 +1,6 @@
 FROM alpine:3.5
 
-MAINTAINER test
+MAINTAINER raiohato@tuta.io
 
 RUN apk update \
 && apk add --no-cache build-base curl unbound supervisor \
