@@ -22,7 +22,7 @@ ENV UPPORT 443
 ENV ISPDNS 114.114.114.114
 
 COPY unbound.conf /etc/unbound/
-COPY chinadns.conf /etc/supervisor/conf.d/
+COPY chinadns.conf /etc/supervisor/supervisord.conf
 
 EXPOSE 53/udp
 
