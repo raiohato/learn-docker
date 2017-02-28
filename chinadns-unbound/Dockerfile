@@ -26,4 +26,4 @@ COPY chinadns.conf /etc/supervisor/supervisord.conf
 
 EXPOSE 53/udp
 
-CMD ["/usr/bin/supervisord"]
+CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf", "-n"]
