@@ -21,10 +21,13 @@ RUN	apk del build-base curl \
 
 ENV UPDNS 208.67.222.222
 ENV UPPORT 443
-ENV ISPDNS 114.114.114.114
+ENV ISPDNS 119.29.29.29
 
 COPY unbound.conf /etc/unbound/
+COPY chinadns.sh /usr/local/bin/
 COPY chinadns.conf /etc/supervisor/supervisord.conf
+
+RUN chmod +x /usr/local/bin/chinadns.sh
 
 EXPOSE 53/udp
 
