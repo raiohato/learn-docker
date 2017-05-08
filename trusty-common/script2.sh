@@ -1,2 +1,2 @@
-#!/bin/sh
-/usr/bin/top
+#!/bin/bash
+echo 222
