@@ -2,7 +2,8 @@ FROM ubuntu:14.04.5
 
 MAINTAINER raiohato@tuta.io
 
-RUN apt-get update && apt-get install -y nano wget supervisor
+RUN apt-get update \
+&& apt-get install -y nano wget supervisor
 
 COPY script1.sh /usr/local/bin/
 COPY script2.sh /usr/local/bin/
