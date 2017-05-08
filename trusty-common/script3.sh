@@ -1,2 +1,2 @@
 #!/bin/sh
-echo script3
+/usr/bin/top
